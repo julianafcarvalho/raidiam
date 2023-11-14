@@ -57,8 +57,6 @@ Cypress configuration settings are in the `cypress.json` file. Adjust settings a
 
 ---
 
-**README for Cucumber Tests with Cypress:**
-
 # Cucumber Tests with Cypress
 
 This repository combines Cucumber with Cypress for Behavior-Driven Development (BDD) style testing. The tests are written in Gherkin syntax and executed using Cypress.
