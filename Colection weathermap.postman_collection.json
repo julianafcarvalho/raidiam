@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "17fc6a0f-d011-4725-a7ff-869a249a5d5c",
+		"name": "Colection weathermap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31136781"
+	},
+	"item": [
+		{
+			"name": "400 error",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{value}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/onecall/timemachine",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"onecall",
+						"timemachine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "404 error",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{value}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/nonexistent_endpoint",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"nonexistent_endpoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "401 error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/onecall/timemachine",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"onecall",
+						"timemachine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5xx error",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=0&lon=0&dt=invalid_timestamp',\r",
+							"    method: 'GET',\r",
+							"}, function (err, res) {\r",
+							"    postman.setNextRequest(null);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{value}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/onecall/timemachine",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"onecall",
+						"timemachine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Current and Forecasts Weather Data",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{value}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/onecall?lat=-23.5505&lon=-46.6333&exclude=minutely,hourly,daily",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"onecall"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "-23.5505"
+						},
+						{
+							"key": "lon",
+							"value": "-46.6333"
+						},
+						{
+							"key": "exclude",
+							"value": "minutely,hourly,daily"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Daily Aggregation",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{value}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/onecall?lat=-23.5505&lon=-46.6333&exclude=current,minutely,hourly",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"onecall"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "-23.5505"
+						},
+						{
+							"key": "lon",
+							"value": "-46.6333"
+						},
+						{
+							"key": "exclude",
+							"value": "current,minutely,hourly"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weather Data for Timestamp",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{value}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=-23.5505&lon=-46.6333&dt=1700229600",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"onecall",
+						"timemachine"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "-23.5505"
+						},
+						{
+							"key": "lon",
+							"value": "-46.6333"
+						},
+						{
+							"key": "dt",
+							"value": "1700229600"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{value}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "{{key}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "value",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "key",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "in",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
