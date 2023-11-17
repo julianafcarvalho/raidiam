@@ -3,7 +3,7 @@ Automated Test Cases
 
 # Cypress Automated Tests
 
-This repository contains automated tests for [Your Website Name]. The tests are implemented using Cypress, a modern end-to-end testing framework.
+This repository contains automated tests for     https://magento.softwaretestingboard.com/. The tests are implemented using Cypress, a end-to-end testing framework.
 
 ## Getting Started
 
