@@ -101,7 +101,7 @@ describe("Test Suite", () => {
     cy.contains("This is a required field");
   });
 
-  // Scenario 6: User logs in successfully using the email from Scenario 1
+  // Scenario 6: User logs in successfully
   it("[Happy Path] - Should log in successfully", () => {
     cy.contains("Sign In").click({ force: true });
     cy.contains("Customer Login");
@@ -241,7 +241,7 @@ describe("Test Suite", () => {
     cy.contains("You need to choose options for your item.");
   });
 
-  // Scenario 17: User explores product details and adds to cart
+  // Scenario 16: User explores product details and adds to cart
   it("[Happy Path] - Should explore product details and successfully add to cart", () => {
     cy.get(
       "#maincontent > div.columns > div > div.widget.block.block-static-block > div.blocks-promo > a > img"
@@ -257,7 +257,7 @@ describe("Test Suite", () => {
     cy.contains("You added");
   });
 
-  // Scenario 19: View and manage items in the shopping cart
+  // Scenario 17: View and manage items in the shopping cart
   it("[Happy Path] - View and manage items in the shopping cart", () => {
     cy.get(
       "#maincontent > div.columns > div > div.widget.block.block-static-block > div.blocks-promo > div > a.block-promo.home-t-shirts > span.image > img"
@@ -275,7 +275,7 @@ describe("Test Suite", () => {
     cy.contains("Proceed to Checkout");
   });
 
-  // Scenario 20: Verify an empty shopping cart
+  // Scenario 18: Verify an empty shopping cart
   it("[Happy Path] - Verify an empty shopping cart", () => {
     cy.get(
       "body > div.page-wrapper > header > div.header.content > div.minicart-wrapper > a"
